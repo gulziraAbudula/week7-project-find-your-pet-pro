@@ -1,0 +1,118 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f4f6; /* Light gray background */
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure the body takes up the full width */
+  height: 100%; /* Ensure the body takes up the full height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.App {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #ffffff; /* White background for the app container */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 100vh; /* Ensure the app container takes up at least the full height of the viewport */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Header */
+h1 {
+  color: #1d4ed8; /* Blue color */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Error Message */
+.text-red-500 {
+  color: #dc2626; /* Red color for error messages */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Search and Filter Section */
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+input[type="text"],
+select {
+  padding: 10px;
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb; /* Blue border on focus */
+  box-shadow: 0 0 4px rgba(37, 99, 235, 0.5);
+}
+
+/* Summary Statistics */
+.text-xl {
+  font-size: 1.25rem;
+  color: #374151; /* Dark gray */
+}
+
+p {
+  margin: 5px 0;
+  color: #4b5563; /* Medium gray */
+}
+
+p span {
+  font-weight: bold;
+  color: #1d4ed8; /* Blue for highlighted text */
+}
+
+/* Pet List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ffffff; /* White background for pet cards */
+  border: 1px solid #e5e7eb; /* Light gray border */
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  margin: 0 0 10px;
+  color: #1f2937; /* Dark gray */
+}
+
+img {
+  border-radius: 8px;
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #6b7280; /* Gray */
+  font-size: 14px;
+}
