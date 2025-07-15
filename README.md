@@ -2,7 +2,7 @@
 
 Submitted by: Gulzira Abdullah
 
-This web app: This app allows you to find your favorite pet and allow you to search based on the type(dog or cat) by name of the pet.  
+This web app: This app allows user to find their favorite pet and search favorite pet based on the type(dog or cat) by the name of the pet.  
 
 Time spent: 5 hours spent in total
 
