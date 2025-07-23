@@ -42,7 +42,7 @@ Here's a walkthrough of implemented user stories:
 https://github.com/gulziraAbudula/week7-project-find-your-pet-pro/blob/cae333f65e3cfd32d40b9144cd5cc6ede4f502c1/src/assets/codepath_WEB102_week07.gif
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with LiceCap  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
