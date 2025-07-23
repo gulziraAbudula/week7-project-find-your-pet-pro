@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
+import { BarChart, Bar, PieChart, Pie, Tooltip, Cell, XAxis, YAxis, Legend, ResponsiveContainer } from 'recharts';
+
 
 const API_KEY = import.meta.env.VITE_APP_PETFINDER_API_KEY;
 const API_SECRET = import.meta.env.VITE_APP_PETFINDER_API_SECRET;
@@ -136,13 +139,63 @@ function App() {
         )}
       </div>
 
+      {/* Visual Insights Section */}
+      <div className="mb-6">
+        <h2 className="text-xl font-semibold">Visual Insights</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Chart 1: Type Distribution */}
+          <div>
+            <h3 className="text-lg font-bold mb-2">Pets by Type</h3>
+            <ResponsiveContainer width="100%" height={250}>
+              <PieChart>
+                <Pie
+                  data={Object.entries(stats.typeCounts).map(([type, count]) => ({ name: type, value: count }))}
+                  dataKey="value"
+                  nameKey="name"
+                  outerRadius={100}
+                  fill="#8884d8"
+                  label
+                >
+                  {Object.keys(stats.typeCounts).map((_, index) => (
+                    <Cell key={`cell-${index}`} fill={["#8884d8", "#82ca9d", "#ffc658", "#ff7f50", "#a29bfe"][index % 5]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Chart 2: Age Groups */}
+          <div>
+            <h3 className="text-lg font-bold mb-2">Pets by Age Group</h3>
+            <ResponsiveContainer width="100%" height={250}>
+              <BarChart
+                data={["Baby", "Young", "Adult", "Senior"].map(age => ({
+                  age,
+                  count: pets.filter(pet => pet.age === age).length,
+                }))}
+              >
+                <XAxis dataKey="age" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="count" fill="#4fc3f7" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+
       <ul className="grid grid-cols-1 gap-4">
         {filteredPets.slice(0, 10).map(pet => (
           <li key={pet.id} className="border rounded p-4">
-            <h3 className="text-lg font-bold">{pet.name}</h3>
-            <p>Type: {pet.type}</p>
-            <p>Breed: {pet.breeds?.primary}</p>
-            {pet.photos[0]?.medium && <img src={pet.photos[0].medium} alt={pet.name} className="mt-2 w-48" />}
+            <Link to={`/pet/${pet.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+              <h3 className="text-lg font-bold">{pet.name}</h3>
+              <p>Type: {pet.type}</p>
+              <p>Breed: {pet.breeds?.primary}</p>
+              {pet.photos[0]?.medium && <img src={pet.photos[0].medium} alt={pet.name} className="mt-2 w-48" />}
+            </Link>
           </li>
         ))}
       </ul>
